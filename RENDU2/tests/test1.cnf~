@@ -1,0 +1,6 @@
+c Header au format suivant :
+c p cnf V C avec V indice max des variables utilisees et C nombre de clauses
+p cnf 2 2
+1 0
+-1 0
+c en desous on repete une variable, pour tester	

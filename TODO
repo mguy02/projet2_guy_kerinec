@@ -1,0 +1,4 @@
+1. Corriger les bugs du rendu 1
+2. Faire le parser/lexer des expressions de la forme 5/\9\/2 => ~5 [...]
+3. Coder tseytin (comme déjà fait)
+4. Relier le tout
