@@ -1,0 +1,117 @@
+digraph G {
+ size = "4,4";
+"95
+false@25" -> "85
+true@25";
+"78
+true@25" -> "85
+true@25";
+"78
+true@25" -> "85
+false@25";
+"30
+true@25" -> "85
+false@25";
+"29
+true@25" -> "33
+true@25";
+"88
+false@24" -> "33
+true@25";
+"23
+true@21" -> "84
+true@25";
+"29
+true@25" -> "84
+true@25";
+"3
+true@3" -> "77
+false@25";
+"84
+true@25" -> "77
+false@25";
+"3
+true@3" -> "68
+true@25";
+"77
+false@25" -> "68
+true@25";
+"19
+true@18" -> "74
+true@25";
+"68
+true@25" -> "74
+true@25";
+"68
+true@25" -> "70
+false@25";
+"74
+true@25" -> "70
+false@25";
+"19
+true@18" -> "54
+false@25";
+"70
+false@25" -> "54
+false@25";
+"54
+false@25" -> "35
+false@25";
+"70
+false@25" -> "35
+false@25";
+"52
+true@9" -> "73
+true@25";
+"74
+true@25" -> "73
+true@25";
+"8
+true@8" -> "95
+false@25";
+"73
+true@25" -> "95
+false@25";
+"16
+true@16" -> "30
+true@25";
+"95
+false@25" -> "30
+true@25";
+"30
+true@25" -> "78
+true@25";
+"35
+false@25" -> "78
+true@25";
+"85
+true@25"[shape=circle, style=filled, fillcolor=purple];
+"85
+false@25"[shape=circle, style=filled, fillcolor=purple];
+"78
+true@25"[shape=circle, style=filled, fillcolor=purple];
+"30
+true@25"[shape=circle, style=filled, fillcolor=purple];
+"95
+false@25"[shape=circle, style=filled, fillcolor=purple];
+"73
+true@25"[shape=circle, style=filled, fillcolor=purple];
+"35
+false@25"[shape=circle, style=filled, fillcolor=purple];
+"54
+false@25"[shape=circle, style=filled, fillcolor=purple];
+"70
+false@25"[shape=circle, style=filled, fillcolor=purple];
+"74
+true@25"[shape=circle, style=filled, fillcolor=purple];
+"68
+true@25"[shape=circle, style=filled, fillcolor=yellow];
+"77
+false@25"[shape=circle, style=filled, fillcolor=cornflowerblue];
+"84
+true@25"[shape=circle, style=filled, fillcolor=cornflowerblue];
+"33
+true@25"[shape=circle, style=filled, fillcolor=cornflowerblue];
+"29
+true@25"[shape=circle, style=filled, fillcolor=cornflowerblue];
+}

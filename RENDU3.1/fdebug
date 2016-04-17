@@ -1,0 +1,58 @@
+Uip potentiel : []
+Remonte val sur 85
+
+On ajoute 95 aux potentiels
+On ajoute 78 aux potentiels
+On ajoute 30 aux potentiels
+Uip potentiel : [(30,85),(78,85),(95,85)]
+Remonte val sur 78
+
+On enleve les enfants de 30 (qui est 85 et 78) de potentiels
+>> On vire 85
+>> On vire 78
+On ajoute 35 aux potentiels
+Uip potentiel : [(35,78),(30,85),(95,85)]
+Remonte val sur 30
+
+On enleve les enfants de 95 (qui est 85 et 30) de potentiels
+>> On vire 85
+>> On vire 30
+Uip potentiel : [(35,78),(95,85)]
+Remonte val sur 95
+
+On ajoute 73 aux potentiels
+Uip potentiel : [(73,95),(35,78),(95,85)]
+Remonte val sur 73
+
+On ajoute 74 aux potentiels
+Uip potentiel : [(74,73),(73,95),(35,78),(95,85)]
+Remonte val sur 35
+
+On ajoute 54 aux potentiels
+On ajoute 70 aux potentiels
+Uip potentiel : [(70,35),(54,35),(74,73),(73,95),(35,78),(95,85)]
+Remonte val sur 54
+
+On enleve les enfants de 70 (qui est 35 et 54) de potentiels
+>> On vire 35
+>> On vire 54
+Uip potentiel : [(70,35),(74,73),(73,95),(95,85)]
+Remonte val sur 70
+
+On ajoute 68 aux potentiels
+On enleve les enfants de 74 (qui est 73 et 70) de potentiels
+>> On vire 73
+>> On vire 95
+>> On vire 70
+Uip potentiel : [(68,70),(74,73)]
+Remonte val sur 74
+
+On enleve les enfants de 68 (qui est 70 et 74) de potentiels
+>> On vire 70
+>> On vire 74
+Uip potentiel : [(68,70)]
+Remonte val sur 68
+
+Clause a apprendre : [-16,-8,-52,-19,-68]
+
+18

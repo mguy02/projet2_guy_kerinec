@@ -1,0 +1,28 @@
+TODO:
+
+IMPORTANT: se répartir le travail 
+
+Emma : gerer format de sortie, parsing particulier, gestion des trucs chiants du parsing
+
+
+- par rapport au rendu 2:
+	*gérer le format de sortie (fait)
+	*cas particulier parsing (clauses, formules vides) (fait)	
+	*difficultées parsing (espaces inutiles, saut de lignes) (fait)
+	*test comparatif de MOMS (pas hyper important)
+- en plus:
+	*graphe des conflits (regarder doc1 et 2 et page wikipedia de probleme SAT (perdu :) ) )
+	*apprentissage de clauses avec priorité (pas regardé) 
+	
+	
+Divers: est-ce que print_paris est utilisée? (elle a été remplacée par print_valuation dans dpll.ml)
+
+
+
+TODO
+GERER PARSING AVEC LES MOINS BORDEL (fait)
+
+
+PRE-README:
+
+Afin de construire le graphe de conflit, nous avons besoin des numéros de clause (pour retrouver la clause initial). Or, utilisant des listes, cela se perd. Ainsi nous avons donc rajouté un numéro associé à chaque clause. Nous prevoyons eventuellement de remplacer plus tard ceci par des tableaux.

@@ -1,10 +1,11 @@
 open Str
-open Expr
+open Types
 
 let ios = int_of_string
 
 (* Lit le fichier ligne par ligne, et crée l'expression de sortie *)
 let parseFile fichier : fnc =
+	(*print_string("Appel a parseFile\n");*)
 
 	let headerVu = ref false in
 	let indiceMax = ref 0 in
@@ -16,6 +17,7 @@ let parseFile fichier : fnc =
 	(* En entrée, une liste de litteraux sous forme d'entiers entre guillemets (donc l:string list) *)
 	(* Test si c'est sous la bonne forme et renvoie un type clause *)
 	let rec check_clause l = 
+		(*print_string("Appel a check_clause l\n");*)
 		let rec aux l r indMax = match l with
 			[] -> r, indMax
 			|t::[] -> failwith "erreur check_clause"
@@ -55,12 +57,14 @@ let parseFile fichier : fnc =
 			(* si c'est un commentaire *)
 			else if (ligne.[0] = 'c') then 
 			(
+				(*print_string("On lit un comm\n");*)
 				aux fichier sortie 		(* on saute les commentaires *)
 			)
 			(* si c'est le header *)
 			else if (ligne.[0] = 'p' && ligne.[1] = ' ') then
 			(
 				(* TODO *)
+				(*print_string("On lit le header !\n");*)
 				
 				if (!headerVu = true) then	(* si on a deja vu un header on arrete tout *)
 				(	
@@ -71,43 +75,44 @@ let parseFile fichier : fnc =
 				(	
 					let r = Str.regexp "[' ']+" in
 					let tab = Str.split r ligne in
-					let n = List.length tab in
+
 				
-					if (n <> 4) then
-					(
-						print_string "Error : header pas au bon format (p cnf V C)";
-						failwith "Error: header pas au bon format"
-					)
-					else
-					(
+					match tab with
+					p::cnf::v::c::[] ->
+						(
+							let r = Str.regexp "[1-9][0-9]*" in
+					
+							let test_cnf = (cnf = "cnf") in
+							let test_v = (Str.string_match r v 0) in
+							let test_c = (Str.string_match r c 0) in
+					
+							if (not (test_cnf && test_v && test_c)) then
+							(
+								print_string "Error : header pas au bon format";
+								failwith "Error : header pas au bon format"
+							)
+							else
+							(
+
+								indiceMax := ios v;
+								nbClauses := ios c;
+
+								headerVu := true;
+								aux fichier sortie;
+							)
 						
-						let p::cnf::v::c::[] = tab in
-					
-						let r = Str.regexp "[1-9][0-9]*" in
-					
-						let test_cnf = (cnf = "cnf") in
-						let test_v = (Str.string_match r v 0) in
-						let test_c = (Str.string_match r c 0) in
-					
-						if (not (test_cnf && test_v && test_c)) then
-						(
-							print_string "Error : header pas au bon format";
-							failwith "Error : header pas au bon format"
 						)
-						else
-						(
-							indiceMax := ios v;
-							nbClauses := ios c;
-							headerVu := true;
-							aux fichier sortie;
-						)
-					)
+					|_ -> (print_string "Error : header pas au bon format (p cnf V C)";
+						failwith "Error: header pas au bon format")
+				
 				)			
 			)
-			
+
 			(* si c'est une clause *)
 			else if (Str.string_match (Str.regexp "-?[1-9][0-9]*") ligne 0) then	(*completer regex *) 
 			(
+				(*print_string("On lit une clause !\n");*)
+			
 				(* si il y a une clause AVANT le header *)
 				if (!headerVu = false) then
 				(
@@ -155,6 +160,7 @@ let parseFile fichier : fnc =
 				);
 				 sortie
 			)
+			|_ -> print_string "Erreur inconnue\n"; []
 			
 	in
 	(* fin aux *)
